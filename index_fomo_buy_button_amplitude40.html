@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FOMO is Real</title>
+<style>
+@keyframes screenShake {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-2px, -2px); }
+  20% { transform: translate(2px, 2px); }
+  30% { transform: translate(-4px, 2px); }
+  40% { transform: translate(4px, -2px); }
+  50% { transform: translate(-2px, 4px); }
+  60% { transform: translate(2px, -4px); }
+  70% { transform: translate(-4px, -4px); }
+  80% { transform: translate(4px, 4px); }
+  90% { transform: translate(0, 2px); }
+  100% { transform: translate(0, 0); }
+}
+    body {
+      margin: 0;
+      font-family: 'Arial Black', sans-serif;
+      background-color: black;
+      color: lime;
+      overflow-x: hidden;
+    }
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 5%;
+      position: relative;
+      background-color: black;
+    }
+    .side-img {
+      max-width: 20vw;
+      height: auto;
+    }
+    .hero-content {
+      text-align: center;
+      margin: 0 5%;
+      flex-shrink: 0;
+    }
+    .hero h1 {
+  font-size: 6vw;
+  color: lime;
+  text-shadow:
+    0 0 40px lime,
+    0 0 80px lime,
+    0 0 120px magenta,
+    0 0 160px magenta;
+  animation: explode 0.2s infinite ease-in-out;
+  transform-origin: center;
+  perspective: 1200px;
+
+      font-size: 6vw;
+      color: lime;
+      text-shadow:
+        0 0 10px lime,
+        0 0 20px lime,
+        0 0 30px magenta,
+        0 0 40px magenta;
+      animation: explode 1.5s infinite ease-in-out;
+      transform-origin: center;
+      perspective: 800px;
+    }
+    
+@keyframes explode {
+  0% { transform: scale(1) translateZ(0); opacity: 1; }
+  50% { transform: scale(2.5) translateZ(100px); opacity: 1; }
+  100% { transform: scale(1) translateZ(0); opacity: 1; }
+
+      0% { transform: scale(1) translateZ(0); opacity: 1; }
+      50% { transform: scale(1.15) translateZ(30px); opacity: 1; }
+      100% { transform: scale(1) translateZ(0); opacity: 1; }
+    }
+    .buy-button {
+      padding: 1em 2em;
+      font-size: 1.5em;
+      background-color: magenta;
+      color: white;
+      border: none;
+      cursor: pointer;
+      animation: shake 0.1s infinite alternate;
+    }
+    @keyframes shake {
+      from { transform: translateX(-5px); }
+      to { transform: translateX(5px); }
+    }
+    .section {
+      padding: 60px 5%;
+      text-align: center;
+    }
+    .highlight {
+      color: magenta;
+      font-size: 1.5em;
+    }
+    .image-section img {
+      max-width: 90%;
+      border: 3px solid lime;
+      margin-top: 20px;
+    }
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: black;
+      font-size: 22px;
+      color: lime;
+      text-shadow: 0 0 8px lime;
+    }
+  
+.flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, lime 10%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  animation: flash 5s infinite;
+  z-index: 9999;
+}
+
+@keyframes flash {
+  0%, 95%, 100% { opacity: 0; }
+  5% { opacity: 0.15; }
+  15% { opacity: 0.3; }
+  25% { opacity: 0.1; }
+  45% { opacity: 0.25; }
+  60% { opacity: 0.05; }
+  80% { opacity: 0.2; }
+  0%, 90%, 100% { opacity: 0; }
+  10% { opacity: 0.3; }
+  20% { opacity: 0; }
+  30% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+  70% { opacity: 0; }
+}
+
+.pepe-laser {
+  position: relative;
+}
+
+.pepe-laser::before,
+.pepe-laser::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 2px;
+  background: linear-gradient(to right, red, orange, yellow);
+  animation: laser-blast 0.1s infinite alternate;
+  transform-origin: left center;
+  opacity: 0.9;
+}
+
+.pepe-laser::after {
+  top: 42%;
+  background: linear-gradient(to right, red, pink, white);
+}
+
+@keyframes laser-blast {
+}
+
+.pepe-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+  position: absolute;
+  top: 45%;
+  width: 300px;
+  height: 4px;
+  background: linear-gradient(to right, #ff0000, #ff00ff, #ffffff);
+  animation: laser-beam 0.08s infinite alternate;
+  transform-origin: left center;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+}
+
+}
+
+@keyframes laser-beam {
+}
+
+.pepe-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+  position: absolute;
+  width: 1200px;  /* увеличили в 4 раза */
+  height: 6px;
+  background: linear-gradient(to right, #ff0000, #ff00ff, #ffffff);
+  transform-origin: left center;
+  opacity: 0.85;
+  z-index: 10;
+  animation: arc-move 2s infinite linear;
+}
+
+  animation-delay: 0s;
+}
+
+  animation-delay: 1s;
+}
+
+}
+.pepe-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+  position: absolute;
+  width: 1200px;
+  height: 6px;
+  background: linear-gradient(to right, #ff0000, #ff00ff, #ffffff);
+  transform-origin: left center;
+  opacity: 0.85;
+  z-index: 10;
+}
+
+}
+
+}
+
+.light-beam {
+  position: fixed;
+  width: 2px;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,255,255,0.2), rgba(255,0,255,0.3));
+  animation: beam-pulse 1s infinite alternate;
+  z-index: 1;
+}
+
+.light-beam:nth-child(odd) {
+  background: linear-gradient(to bottom, rgba(255,255,0,0.2), rgba(255,0,0,0.3));
+}
+
+@keyframes beam-pulse {
+  from { transform: scaleY(1); opacity: 0.4; }
+  to   { transform: scaleY(1.2); opacity: 1; }
+}
+
+
+.super-laser {
+  position: fixed;
+  width: 2px;
+  height: 150vh;
+  background: linear-gradient(to bottom, rgba(255,0,255,0.6), rgba(255,255,0,0.8));
+  animation: mega-beam 0.3s infinite alternate;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.super-laser:nth-child(even) {
+  background: linear-gradient(to bottom, rgba(0,255,255,0.5), rgba(255,0,0,0.7));
+}
+
+@keyframes mega-beam {
+  0% { transform: rotate(0deg) scaleY(1); opacity: 0.6; }
+  50% { transform: rotate(20deg) scaleY(1.5); opacity: 1; }
+  100% { transform: rotate(-20deg) scaleY(1.3); opacity: 0.8; }
+}
+
+.rocket {
+  position: absolute;
+  top: 80px;
+  left: -200px;
+  width: 120px;
+  height: auto;
+  z-index: 5;
+  animation: rocket-fly 5s linear infinite;
+}
+
+@keyframes rocket-fly {
+  0% { left: -200px; transform: rotate(5deg) scale(1); }
+  50% { transform: rotate(0deg) scale(1.1); }
+  100% { left: 110%; transform: rotate(-3deg) scale(1); }
+}
+
+.rocket-chaos {
+  position: fixed;
+  width: 120px;
+  height: auto;
+  z-index: 999;
+  animation: rocket-chaos-move 10s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes rocket-chaos-move {
+  0% { top: 5%; left: -15%; transform: rotate(20deg) scale(1); }
+  15% { top: 30%; left: 20%; transform: rotate(-15deg) scale(1.1); }
+  30% { top: 10%; left: 50%; transform: rotate(5deg) scale(0.95); }
+  45% { top: 70%; left: 80%; transform: rotate(-25deg) scale(1.1); }
+  60% { top: 40%; left: 40%; transform: rotate(10deg) scale(1.2); }
+  75% { top: 85%; left: 10%; transform: rotate(0deg) scale(0.9); }
+  90% { top: 15%; left: 70%; transform: rotate(15deg) scale(1); }
+  100% { top: 5%; left: -15%; transform: rotate(20deg) scale(1); }
+}
+
+@keyframes rocket-chaos-move-logic {
+  0%   { top: 5%;   left: -15%; transform: rotate(25deg) scale(1); }
+  15%  { top: 20%;  left: 20%;  transform: rotate(15deg) scale(1); }
+  30%  { top: 10%;  left: 50%;  transform: rotate(0deg) scale(1); }
+  45%  { top: 30%;  left: 80%;  transform: rotate(-10deg) scale(1); }
+  60%  { top: 50%;  left: 60%;  transform: rotate(-25deg) scale(1); }
+  75%  { top: 70%;  left: 40%;  transform: rotate(-45deg) scale(1); }
+  90%  { top: 85%;  left: 20%;  transform: rotate(-65deg) scale(1); }
+  100% { top: 95%;  left: -15%; transform: rotate(-85deg) scale(1); }
+}
+
+  0%   { top: 5%;   left: -15%; transform: rotate(45deg) scale(1); }
+  14%  { top: 10%;  left: 10%;  transform: rotate(30deg) scale(1); }
+  28%  { top: 20%;  left: 40%;  transform: rotate(10deg) scale(1); }
+  42%  { top: 35%;  left: 70%;  transform: rotate(-5deg) scale(1); }
+  56%  { top: 60%;  left: 90%;  transform: rotate(-20deg) scale(1); }
+  70%  { top: 70%;  left: 50%;  transform: rotate(-50deg) scale(1); }
+  84%  { top: 80%;  left: 20%;  transform: rotate(-70deg) scale(1); }
+  100% { top: 95%;  left: -15%; transform: rotate(-90deg) scale(1); }
+}
+
+
+@keyframes bounce-updown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
+
+.buy-button {
+  animation: bounce-updown 1s infinite ease-in-out;
+}
+</style>
+<script>
+    function startCountdown(durationSeconds) {
+      let timer = durationSeconds;
+      const display = document.getElementById("countdown");
+
+      function update() {
+        const minutes = String(Math.floor(timer / 60)).padStart(2, '0');
+        const seconds = String(timer % 60).padStart(2, '0');
+        display.textContent = `${minutes}:${seconds}`;
+        if (timer > 0) {
+          timer--;
+        } else {
+          timer = durationSeconds; // restart timer
+        }
+      }
+
+      update();
+      setInterval(update, 200);
+    }
+
+    window.onload = function () {
+      startCountdown(300); // 25 минут
+    };
+  </script>
+</head>
+<body style="animation: screenShake 0.4s infinite;"><div class="light-beam" style="left: 90vw;"></div><div class="light-beam" style="left: 80vw;"></div><div class="light-beam" style="left: 70vw;"></div><div class="light-beam" style="left: 60vw;"></div><div class="light-beam" style="left: 50vw;"></div><div class="light-beam" style="left: 40vw;"></div><div class="light-beam" style="left: 30vw;"></div><div class="light-beam" style="left: 20vw;"></div><div class="light-beam" style="left: 10vw;"></div><div class="light-beam" style="left: 0vw;"></div>
+<div class="hero">
+<div class="pepe-wrapper"><img alt="Falling Pepe" class="side-img pepe-laser" src="falling-pepe.png"/></div>
+<div class="hero-content">
+<h1>FOMO IS REAL</h1>
+<button class="buy-button">BUY NOW</button>
+</div>
+<img alt="Rocket Side" class="side-img" src="rocket-side.png"/>
+</div>
+<div class="section">
+<h2 style="font-size: 28px;">NEXT LIQUIDITY LAUNCH IN:</h2>
+<div id="countdown" style="font-size: 48px; color: magenta; margin: 20px 0;"></div>
+<p class="highlight">3,213 PEOPLE HAVE BOUGHT FOMO IN THE LAST 24 HOURS</p>
+</div>
+<div class="section image-section">
+<img alt="Memes" src="memes-section.png"/>
+<p class="highlight">This could be you... if you wait another hour</p>
+</div>
+<div class="section image-section">
+<img alt="Why Buy FOMO" src="reasons-section.png"/>
+</div>
+<div class="section image-section">
+</div>
+<footer style="background: linear-gradient(to right, magenta, lime); padding: 20px 0; display: flex; justify-content: center; align-items: center; gap: 80px; position: relative;">
+<a href="#" style="margin: 0 40px; font-size: 20px; color: black; font-weight: bold; text-decoration: none;">
+      Twitter
+    </a>
+<a href="#" style="margin: 0 40px; font-size: 20px; color: black; font-weight: bold; text-decoration: none;">
+      Dexscreener
+    </a>
+<span style="position: absolute; right: 40px; top: 50%; transform: translateY(-50%); margin-right: 40px; font-size: 16px; color: black; opacity: 0.8;">
+      ©2025 All rights reserved
+    </span>
+</footer>
+<div class="flash"></div>
+</body>
+</html>
